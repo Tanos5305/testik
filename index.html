@@ -23,6 +23,27 @@
             to { opacity: 1; }
         }
 
+        .banner {
+            background-color: rgba(30, 30, 30, 0.9);
+            color: #FF5733;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            font-size: 1.2em;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        .banner-close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background: transparent;
+            border: none;
+            color: #FF5733;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
         header {
             display: flex;
             align-items: center;
@@ -297,6 +318,12 @@
     </style>
 </head>
 <body>
+    <!-- Banner Section -->
+    <div class="banner" id="banner">
+        So there are some problems with games right now but I'm working on that. Some games work, and I added new working proxies! 
+        <button class="banner-close" onclick="closeBanner()">×</button>
+    </div>
+
     <header>
         <img src="https://lh6.googleusercontent.com/yj86qfbuVJpUPMD8mZiYUw1KnVWDI6TgYw-jsgcR8sIxsLpcjEeXCKIOhSkOlzdfc6kpdHrad8r_xHkJRKNZo6E=w16383" alt="PR0XLD Logo">
         <h1>PR0XLD UPDATE SOON!!!</h1>
@@ -449,6 +476,11 @@
         function closeModal() {
             document.getElementById("game-iframe").src = "";
             document.getElementById("gameModal").style.display = "none";
+        }
+
+        // Close banner
+        function closeBanner() {
+            document.getElementById("banner").style.display = "none";
         }
 
         // Open/Close Proxy Modal
