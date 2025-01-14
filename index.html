@@ -28,10 +28,14 @@
             color: #FF5733;
             text-align: center;
             padding: 15px;
-            position: relative;
+            position: fixed;  /* Fixed position for the banner */
+            width: 100%;  /* Full width */
+            top: 0;  /* Stick to the top */
+            left: 0;  /* Align with left */
+            z-index: 1000;  /* Ensure it is above other content */
             font-size: 1.5em;  /* Increased font size */
-            animation: slideDown 0.5s forwards;  /* Added slide down animation */
-            border-bottom: 3px solid #FF5733;  /* Added bottom border */
+            animation: slideDown 0.5s forwards;  /* Slide down animation */
+            border-bottom: 3px solid #FF5733;  /* Bottom border */
         }
 
         @keyframes slideDown {
@@ -58,6 +62,8 @@
             background: rgba(30, 30, 30, 0.9);
             border-bottom: 3px solid #FF5733;
             box-shadow: 0 4px 20px rgba(255, 0, 0, 0.7);
+            margin-top: 60px; /* Space for the fixed banner */
+            position: relative; /* Ensure header stays in flow of document */
         }
 
         header img {
@@ -343,7 +349,7 @@
     </style>
 </head>
 <body>
-    <!-- Banner Section -->
+    <!-- Fixed Banner Section -->
     <div class="banner" id="banner">
         ⚠️ There are some problems with games right now, but I'm working on that! Some games work, and I added new working proxies! 
         <button class="banner-close" onclick="closeBanner()">×</button>
